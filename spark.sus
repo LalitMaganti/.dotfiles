@@ -1,0 +1,15 @@
+card sus {
+    spark card fish
+    spark card i3
+}
+
+card fish {
+    into ~/.config/fish
+    outof fish
+}
+
+card i3 {
+    into ~/.i3
+    outof i3
+}
+
