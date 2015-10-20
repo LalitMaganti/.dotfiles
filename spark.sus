@@ -1,15 +1,23 @@
-card sus {
-    spark card fish
+card full {
+    spark card console
     spark card i3
+}
+
+card console {
+    spark card fish
 }
 
 card fish {
     into ~/.config/fish
     outof fish
+
+    config.fish
+    functions
 }
 
 card i3 {
     into ~/.i3
     outof i3
-}
 
+    config
+}
