@@ -12,14 +12,20 @@ card console {
 
 card fish {
     into ~/.config/fish
+    alternatives $(SPARK_TYPE) shared
     outof fish
 
     config.fish
+    env.fish
+    fish-vi.fish
+    powerline.fish
+
     functions
 }
 
 card powerline {
     into ~/.config/powerline
+    alternatives $(SPARK_TYPE) shared
     outof powerline
 
     colorschemes
@@ -28,13 +34,19 @@ card powerline {
 
 card tmux {
     into ~
+    alternatives $(SPARK_TYPE) shared
     outof tmux
 
+    {
+        into .tmux
+        powerline.conf
+    }
     .tmux.conf
 }
 
 card vim {
     into ~
+    alternatives $(SPARK_TYPE) shared
     outof vim
 
     .vimrc
@@ -42,6 +54,7 @@ card vim {
 
 card i3 {
     into ~/.i3
+    alternatives $(SPARK_TYPE) shared
     outof i3
 
     config
