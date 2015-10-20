@@ -5,6 +5,7 @@ card full {
 
 card console {
     spark card fish
+    spark card powerline
     spark card tmux
     spark card vim
 }
@@ -15,6 +16,14 @@ card fish {
 
     config.fish
     functions
+}
+
+card powerline {
+    into ~/.config/powerline
+    outof powerline
+
+    colorschemes
+    themes
 }
 
 card tmux {
