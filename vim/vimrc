@@ -19,6 +19,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
