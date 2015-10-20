@@ -3,10 +3,6 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
-" Powerline setup
-set noshowmode
-set t_Co=256
-
 " Vundle config
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -76,3 +72,7 @@ nnoremap <silent> <C-w><Left> :<C-u>call <SID>JumpWithWrap('h', 'l')<CR>
 nnoremap <silent> <C-w><Down> :<C-u>call <SID>JumpWithWrap('j', 'k')<CR>
 nnoremap <silent> <C-w><Up> :<C-u>call <SID>JumpWithWrap('k', 'j')<CR>
 nnoremap <silent> <C-w><Right> :<C-u>call <SID>JumpWithWrap('l', 'h')<CR>
+
+" Powerline setup
+set noshowmode
+set t_Co=256
