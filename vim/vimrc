@@ -1,0 +1,70 @@
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+" Powerline setup
+set noshowmode
+set t_Co=256
+
+" Vundle config
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Vundle setup
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-sensible'
+
+" Vundle finish
+call vundle#end()
+filetype plugin indent on
+
+" Indentation
+set shiftwidth=2
+set expandtab
+set tabstop=2
+set cindent
+
+" Shortcuts to navigation of panes
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Force no arrow keys :P
+inoremap <Up> <NOP>
+vnoremap <Up> <NOP>
+inoremap <Down> <NOP>
+vnoremap <Down> <NOP>
+inoremap <Left> <NOP>
+vnoremap <Left> <NOP>
+inoremap <Right> <NOP>
+vnoremap <Right> <NOP>
+
+" Wrap window-move-cursor
+function! s:GotoNextWindow( direction, count )
+  let l:prevWinNr = winnr()
+  execute a:count . 'wincmd' a:direction
+  return winnr() != l:prevWinNr
+endfunction
+
+" Wrap around jumping
+function! s:JumpWithWrap( direction, opposite )
+  if ! s:GotoNextWindow(a:direction, v:count1)
+    call s:GotoNextWindow(a:opposite, 999)
+  endif
+endfunction
+
+" Wraparound navigation of panes
+nnoremap <silent> <C-w>h :<C-u>call <SID>JumpWithWrap('h', 'l')<CR>
+nnoremap <silent> <C-w>j :<C-u>call <SID>JumpWithWrap('j', 'k')<CR>
+nnoremap <silent> <C-w>k :<C-u>call <SID>JumpWithWrap('k', 'j')<CR>
+nnoremap <silent> <C-w>l :<C-u>call <SID>JumpWithWrap('l', 'h')<CR>
+nnoremap <silent> <C-w><Left> :<C-u>call <SID>JumpWithWrap('h', 'l')<CR>
+nnoremap <silent> <C-w><Down> :<C-u>call <SID>JumpWithWrap('j', 'k')<CR>
+nnoremap <silent> <C-w><Up> :<C-u>call <SID>JumpWithWrap('k', 'j')<CR>
+nnoremap <silent> <C-w><Right> :<C-u>call <SID>JumpWithWrap('l', 'h')<CR>

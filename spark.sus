@@ -5,6 +5,8 @@ card full {
 
 card console {
     spark card fish
+    spark card tmux
+    spark card vim
 }
 
 card fish {
@@ -13,6 +15,20 @@ card fish {
 
     config.fish
     functions
+}
+
+card tmux {
+    into ~
+    outof tmux
+
+    .tmux.conf
+}
+
+card vim {
+    into ~
+    outof vim
+
+    .vimrc
 }
 
 card i3 {
