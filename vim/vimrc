@@ -18,6 +18,13 @@ call vundle#begin()
 " Vundle plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/syntastic'
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Vundle finish
 call vundle#end()
