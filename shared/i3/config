@@ -57,6 +57,20 @@ bindsym $mod+Shift+0 move container to workspace number 0
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+mode "resize" {
+        bindsym j           resize shrink width 10 px or 10 ppt
+        bindsym k           resize grow height 10 px or 10 ppt
+        bindsym l           resize shrink height 10 px or 10 ppt
+        bindsym semicolon   resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Enter resize mode
+bindsym $mod+r mode "resize"
+
 # Custom Apps
 bindsym $mod+c exec communi
 bindsym $mod+d exec synapse
