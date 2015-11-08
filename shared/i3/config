@@ -74,7 +74,7 @@ bindsym $mod+r mode "resize"
 # Custom Apps
 bindsym $mod+c exec communi
 bindsym $mod+d exec synapse
-bindsym $mod+t exec nautilus
+bindsym $mod+t exec thunar
 bindsym $mod+b exec chromium
 bindsym $mod+m exec spotify
 bindsym $mod+i exec intellij-idea-ce-eap
