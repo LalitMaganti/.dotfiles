@@ -1,39 +1,69 @@
-" Powerline
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
-" Vundle config
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" NeoBundle manager config
+set nocompatible
+filetype off
 
-" Vundle setup
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" NeoBundle start
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle'))
 
-" Vundle plugins
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'digitaltoad/vim-jade'
+" Add plugins
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'VundleVim/Vundle.vim'
+NeoBundle 'tpope/vim-sensible'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'xolox/vim-easytags'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'rhysd/conflict-marker.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
+" Finish NeoBundle
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
-" Vundle finish
-call vundle#end()
-filetype plugin indent on
+" Unite
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>fs :<C-u>Unite -buffer-name=files   -start-insert file_rec/async:! -default-action=split<cr>
+nnoremap <leader>fv :<C-u>Unite file_rec/async -default-action=vsplit<cr>
+nnoremap <leader>fc :<C-u>Unite file_rec/async<cr>
+nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
 " Indentation
 set shiftwidth=2
 set expandtab
 set tabstop=2
 set cindent
+
+" Use vim as it was supposed be
+set hidden
 
 " Shortcuts to navigation of panes
 nmap <C-h> <C-w>h
@@ -42,14 +72,14 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Force no arrow keys :P
+noremap <Up> <NOP>
 inoremap <Up> <NOP>
-vnoremap <Up> <NOP>
+noremap <Down> <NOP>
 inoremap <Down> <NOP>
-vnoremap <Down> <NOP>
+noremap <Left> <NOP>
 inoremap <Left> <NOP>
-vnoremap <Left> <NOP>
+noremap <Right> <NOP>
 inoremap <Right> <NOP>
-vnoremap <Right> <NOP>
 
 " Wrap window-move-cursor
 function! s:GotoNextWindow( direction, count )
