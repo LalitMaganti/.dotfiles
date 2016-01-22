@@ -75,7 +75,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+c exec communi
 bindsym $mod+d exec synapse
 bindsym $mod+t exec thunar
-bindsym $mod+b exec chromium
+bindsym $mod+b exec google-chrome-stable
 bindsym $mod+m exec spotify
 bindsym $mod+i exec intellij-idea-ce-eap
 bindsym $mod+a exec android-studio
