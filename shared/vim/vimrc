@@ -1,6 +1,7 @@
 " NeoBundle manager config
 set nocompatible
 filetype off
+set shell=/bin/bash
 
 " NeoBundle start
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -14,15 +15,13 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'rhysd/conflict-marker.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 
+" Powerline
+source ~/.vim/powerline.rc
+
 " Finish NeoBundle
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
-
-" Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 " Indentation
 set shiftwidth=2

@@ -49,6 +49,10 @@ card vim {
     alternatives $(SPARK_TYPE) shared
     outof vim
 
+    {
+        into .vim
+        powerline.rc
+    }
     .vimrc
 }
 
