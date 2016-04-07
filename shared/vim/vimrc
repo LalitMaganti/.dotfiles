@@ -10,10 +10,17 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " Add plugins
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-sensible'
+NeoBundle 'wellle/targets.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'rhysd/conflict-marker.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
 
 " Powerline
 source ~/.vim/powerline.rc
@@ -73,6 +80,17 @@ nnoremap <silent> <C-w>h :<C-u>call <SID>JumpWithWrap('h', 'l')<CR>
 nnoremap <silent> <C-w>j :<C-u>call <SID>JumpWithWrap('j', 'k')<CR>
 nnoremap <silent> <C-w>k :<C-u>call <SID>JumpWithWrap('k', 'j')<CR>
 nnoremap <silent> <C-w>l :<C-u>call <SID>JumpWithWrap('l', 'h')<CR>
+
+let g:unite_source_history_yank_enable = 1
+try
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+catch
+endtry
+" search a file in the filetree
+nnoremap <space><space> :split<cr> :Unite -start-insert file_rec/async<cr>
+" reset not it is <C-l> normally
+:nnoremap <space>r <Plug>(unite_restart)
 
 " Powerline setup
 set noshowmode

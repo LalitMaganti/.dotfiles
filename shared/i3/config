@@ -73,7 +73,7 @@ bindsym $mod+r mode "resize"
 
 # Custom Apps
 bindsym $mod+c exec communi
-bindsym $mod+d exec synapse
+bindsym $mod+d exec j4-dmenu-desktop
 bindsym $mod+t exec thunar
 bindsym $mod+b exec google-chrome-stable
 bindsym $mod+m exec spotify
@@ -88,6 +88,7 @@ exec --no-startup-id feh --bg-fill /home/lalit/Pictures/WordsofRadiance_new_1920
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrdb -merge ~/.Xresources
+exec python2 /usr/lib/python2.7/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3 -- -f "Meslo LG S for Powerline:style=RegularForPowerline:pixelsize=11"
 
 # volume control
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5

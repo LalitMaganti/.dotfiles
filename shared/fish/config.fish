@@ -8,22 +8,12 @@ set EDITOR vim
 
 # Vim stuff
 alias nano="vim"
+alias trm="trash"
+alias mrm="maybe rm"
 
-# Override exit when inside tmux
-#if [ $TMUX ]
-    #function exit
-        #set --local panes (tmux list-panes | wc -l)
-        #if [ $panes = "1" ]
-            #tmux detach
-        #else
-            #builtin exit
-        #end
-    #end
-#else
-    #set --local id (tmux ls | grep -vm1 attached | cut -d: -f1)
-    #if [ $id ]
-        #exec tmux -2 attach-session -t $id
-    #else
-        #exec tmux -2 new-session
-    #end
-#end
+function rm
+  echo "NO! Don't use rm. Use trm, mrm or rmi instead."
+end
+function rmi
+  command rm -i $argv
+end
