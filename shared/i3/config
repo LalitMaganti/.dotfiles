@@ -1,5 +1,25 @@
 set $mod Mod4
 
+# Some useful colors
+set $black       #212121
+set $darkblack   #000000
+set $red         #fb4934
+set $darkred     #cc241d
+set $green       #b8bb26
+set $darkgreen   #98971a
+set $yellow      #fabd2f
+set $darkyellow  #d79921
+set $blue        #83a598
+set $darkblue    #458588
+set $magenta     #d3869b
+set $darkmagenta #b16286
+set $cyan        #8ec07c
+set $darkcyan    #689d6a
+set $white       #ebdbb2
+set $darkwhite   #a89984
+# set $background  #000000
+set $transparent #1d202100
+
 # start a terminal
 bindsym $mod+Return exec termite
 
@@ -57,6 +77,9 @@ bindsym $mod+Shift+0 move container to workspace number 0
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# Enter resize mode
+bindsym $mod+r mode "resize"
+
 mode "resize" {
         bindsym j           resize shrink width 10 px or 10 ppt
         bindsym k           resize grow height 10 px or 10 ppt
@@ -68,8 +91,55 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Enter resize mode
-bindsym $mod+r mode "resize"
+# Bar
+bar {
+    status_command i3blocks
+    i3bar_command i3bar -t
+    position top
+    font pango:Hack, FontAwesome 9
+    strip_workspace_numbers yes
+    separator_symbol "■"
+    bindsym button4 nop
+    bindsym button5 nop
+    tray_output eDP1
+    tray_output LVDS-0
+    tray_padding 0
+    height 20
+    colors {
+        statusline         $white
+        background         $transparent
+        separator          $yellow
+
+        focused_workspace  $transparent $transparent $yellow
+        inactive_workspace $transparent $transparent $white
+        active_workspace   $transparent $transparent $white
+        urgent_workspace   $darkred     $darkred     $black
+        binding_mode       $transparent $transparent $yellow
+    }
+}
+
+set $mode_brightness <span>        </span><span background='#fabd2f' foreground='#000000'> brightness </span> <span foreground='#ebdbb2'>+</span> increase <span foreground='#ebdbb2'>-</span> decrease
+bindsym $mod+Shift+b mode "$mode_brightness"
+mode --pango_markup "$mode_brightness" {
+    bindsym plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 10
+    bindsym minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 10
+    bindsym Shift+plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 1
+    bindsym Shift+minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 1
+
+    bindsym 0     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 100
+    bindsym 1     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 10
+    bindsym 2     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 20
+    bindsym 3     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 30
+    bindsym 4     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 40
+    bindsym 5     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 50
+    bindsym 6     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 60
+    bindsym 7     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 70
+    bindsym 8     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 80
+    bindsym 9     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 90
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # Custom Apps
 bindsym $mod+c exec communi
@@ -88,11 +158,14 @@ exec --no-startup-id feh --bg-fill /home/lalit/Pictures/WordsofRadiance_new_1920
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec python2 /usr/lib/python2.7/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3 -- -f "Meslo LG S for Powerline:style=RegularForPowerline:pixelsize=11"
 
 # volume control
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # brightness control
 bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
