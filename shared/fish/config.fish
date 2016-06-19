@@ -4,6 +4,7 @@ source "$HOME/.config/fish/env.fish"
 fundle plugin 'edc/bass'
 fundle plugin 'fisherman/z'
 fundle plugin 'oh-my-fish/theme-bobthefish'
+fundle plugin 'oh-my-fish/plugin-tmux'
 fundle init
 
 # Base16 Shell
