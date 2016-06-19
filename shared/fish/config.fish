@@ -1,5 +1,15 @@
 source "$HOME/.config/fish/env.fish"
 
+# Plugins
+fundle plugin 'edc/bass'
+fundle plugin 'fisherman/z'
+fundle plugin 'oh-my-fish/theme-bobthefish'
+
+fundle init
+
+# Base16 Shell
+eval sh $HOME/.config/base16-shell/base16-monokai.dark.sh
+
 # Set environment vars
 set fish_user_paths $fish_user_paths $HOME/.cabal/bin $HOME/.local/bin
 set EDITOR nvim

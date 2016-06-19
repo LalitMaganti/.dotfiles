@@ -16,7 +16,6 @@ card fish {
 
     config.fish
     env.fish
-    powerline.fish
 
     functions
 }

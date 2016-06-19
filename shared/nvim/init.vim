@@ -1,7 +1,7 @@
 " Neovim
 call plug#begin('~/.config/nvim/plugged')
 
-" Add plugins
+" Generic plugins
 Plug 'tpope/vim-sensible'
 Plug 'wellle/targets.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -12,7 +12,12 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+
+" Fzf
 Plug 'junegunn/fzf.vim'
+
+" Airline
+Plug 'itchyny/lightline.vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -29,6 +34,19 @@ set cindent
 
 " Use vim as it was supposed be
 set hidden
+
+" True colors
+set t_Co=256
+
+" Powerline
+let g:lightline = {
+      \ 'colorscheme': 'solarized_dark',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
 
 " Rust Racer
 set hidden
