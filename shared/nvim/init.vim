@@ -13,6 +13,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
+" Repeat commands
+Plug 'tpope/vim-repeat'
+
 " Clipboard
 Plug 'svermeulen/vim-easyclip'
 
@@ -58,6 +61,10 @@ nnoremap <Leader>P "+P
 
 " copy whole file (keeping cursor position)
 nnoremap <Leader>c :%y+<CR>
+
+" EasyClip stuff
+set clipboard=unnamedplus
+let g:EasyClipUseSubstituteDefaults = 1
 
 " Powerline
 let g:lightline = {
