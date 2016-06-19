@@ -61,5 +61,9 @@ card i3 {
     alternatives $(SPARK_TYPE) shared
     outof i3
 
+    {
+        into .config/i3
+        i3exit
+    }
     config
 }
