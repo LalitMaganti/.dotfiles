@@ -35,12 +35,9 @@ set cindent
 " Use vim as it was supposed be
 set hidden
 
-" True colors
-set t_Co=256
-
 " Powerline
 let g:lightline = {
-      \ 'colorscheme': 'solarized_dark',
+      \ 'colorscheme': 'monokai',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
