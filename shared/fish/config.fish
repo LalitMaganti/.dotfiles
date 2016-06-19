@@ -1,4 +1,3 @@
-source "$HOME/.config/fish/powerline.fish"
 source "$HOME/.config/fish/env.fish"
 
 # Set environment vars

@@ -1,8 +1,3 @@
-" NeoBundle manager config
-set nocompatible
-filetype off
-set shell=/bin/bash
-
 " NeoBundle start
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle'))
@@ -19,14 +14,11 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
-" NeoBundle 'junegunn/fzf.vim'
+NeoBundle 'junegunn/fzf.vim'
 
 " Rust
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'racer-rust/vim-racer'
-
-" Powerline
-source ~/.vim/powerline.rc
 
 " Finish NeoBundle
 call neobundle#end()
@@ -54,19 +46,10 @@ nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
 
+" Rust Racer
 set hidden
 let g:racer_cmd = "racer"
 let $RUST_SRC_PATH="/usr/src/rust/src"
-
-" Force no arrow keys :P
-" noremap <Up> <NOP>
-" inoremap <Up> <NOP>
-" noremap <Down> <NOP>
-" inoremap <Down> <NOP>
-" noremap <Left> <NOP>
-" inoremap <Left> <NOP>
-" noremap <Right> <NOP>
-" inoremap <Right> <NOP>
 
 " Wrap window-move-cursor
 function! s:GotoNextWindow( direction, count )
@@ -87,7 +70,3 @@ nnoremap <silent> <C-w>h :<C-u>call <SID>JumpWithWrap('h', 'l')<CR>
 nnoremap <silent> <C-w>j :<C-u>call <SID>JumpWithWrap('j', 'k')<CR>
 nnoremap <silent> <C-w>k :<C-u>call <SID>JumpWithWrap('k', 'j')<CR>
 nnoremap <silent> <C-w>l :<C-u>call <SID>JumpWithWrap('l', 'h')<CR>
-
-" Powerline setup
-set noshowmode
-set t_Co=256

@@ -1,6 +1,0 @@
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-
-set t_Co=16
-let g:airline_powerline_fonts = 1
-let g:airline_solarized_bg = 'dark'

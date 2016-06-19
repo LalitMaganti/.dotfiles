@@ -5,9 +5,8 @@ card full {
 
 card console {
     spark card fish
-    spark card powerline
     spark card tmux
-    spark card vim
+    spark card nvim
 }
 
 card fish {
@@ -17,19 +16,9 @@ card fish {
 
     config.fish
     env.fish
-    fish-vi.fish
     powerline.fish
 
     functions
-}
-
-card powerline {
-    into ~/.config/powerline
-    alternatives $(SPARK_TYPE) shared
-    outof powerline
-
-    colorschemes
-    themes
 }
 
 card tmux {
@@ -37,23 +26,15 @@ card tmux {
     alternatives $(SPARK_TYPE) shared
     outof tmux
 
-    {
-        into .tmux
-        powerline.conf
-    }
     .tmux.conf
 }
 
-card vim {
-    into ~
+card nvim {
+    into ~/.config/nvim
     alternatives $(SPARK_TYPE) shared
-    outof vim
+    outof nvim
 
-    {
-        into .vim
-        powerline.rc
-    }
-    .vimrc
+    init.vim
 }
 
 card i3 {
