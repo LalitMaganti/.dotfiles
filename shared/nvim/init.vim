@@ -13,6 +13,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
+" Clipboard
+Plug 'svermeulen/vim-easyclip'
+
 " Fzf
 Plug 'junegunn/fzf.vim'
 
@@ -34,6 +37,27 @@ set cindent
 
 " Use vim as it was supposed be
 set hidden
+
+"↓ in visual mode, when I press <space>d whatever I delete goes to the
+"↓ clipboard, for example, <space>dd would delete the current line and I
+"↓ could CTRL-C it into Firefox or whatever
+vnoremap <Leader>d "+d
+
+"↓ same, but just copies instead of deleting
+vnoremap <Leader>y "+y
+
+"↓ paste from the clipboard
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
+
+"↓ same as above, but for normal mode
+nnoremap <Leader>d "+d
+nnoremap <Leader>y "+y
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+
+" copy whole file (keeping cursor position)
+nnoremap <Leader>c :%y+<CR>
 
 " Powerline
 let g:lightline = {
