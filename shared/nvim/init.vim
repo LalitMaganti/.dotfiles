@@ -19,9 +19,6 @@ Plug 'scrooloose/syntastic'
 " Repeat commands
 Plug 'tpope/vim-repeat'
 
-" Clipboard
-Plug 'svermeulen/vim-easyclip'
-
 " Fzf
 Plug 'junegunn/fzf.vim'
 
@@ -93,30 +90,8 @@ nnoremap <C-n> :call NumberToggle()<cr>
 autocmd InsertEnter * :call NumberToggle()
 autocmd InsertLeave * :call NumberToggle()
 
-"↓ in visual mode, when I press <space>d whatever I delete goes to the
-"↓ clipboard, for example, <space>dd would delete the current line and I
-"↓ could CTRL-C it into Firefox or whatever
-vnoremap <Leader>d "+d
-
-"↓ same, but just copies instead of deleting
-vnoremap <Leader>y "+y
-
-"↓ paste from the clipboard
-vnoremap <Leader>p "+p
-vnoremap <Leader>P "+P
-
-"↓ same as above, but for normal mode
-nnoremap <Leader>d "+d
-nnoremap <Leader>y "+y
-nnoremap <Leader>p "+p
-nnoremap <Leader>P "+P
-
-" copy whole file (keeping cursor position)
-nnoremap <Leader>c :%y+<CR>
-
-" EasyClip stuff
+" Clipboard
 set clipboard=unnamedplus
-let g:EasyClipUseSubstituteDefaults = 1
 
 " Powerline
 let g:lightline = {
