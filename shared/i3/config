@@ -157,8 +157,8 @@ bar {
     status_command i3blocks
     i3bar_command i3bar -t
     position top
-    font pango:Hack, FontAwesome 9
-    # strip_workspace_numbers yes
+    font pango: San Francisco Text, Font Awesome 11
+    strip_workspace_numbers yes
     separator_symbol "■"
     bindsym button4 nop
     bindsym button5 nop
@@ -166,14 +166,14 @@ bar {
     height 28
     colors {
         statusline         $white
-        background         $black
+        background         $darkblack
         separator          $yellow
 
-        focused_workspace  $black $black $blue
-        inactive_workspace $black $black $white
-        active_workspace   $black $black $white
-        urgent_workspace   $darkred     $darkred     $black
-        binding_mode       $black $black $blue
+        focused_workspace  $darkblack $darkblack $blue
+        inactive_workspace $darkblack $darkblack $white
+        active_workspace   $darkblack $darkblack $white
+        urgent_workspace   $darkred     $darkred     $darkblack
+        binding_mode       $darkblack $darkblack $blue
     }
 }
 
@@ -184,7 +184,7 @@ for_window [class="Spotify"]        move to workspace $ws9
 bindsym $mod+c exec communi
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec chromium
 bindsym $mod+m exec spotify --force-device-scale-factor=1.0000001
 bindsym $mod+i exec intellij-idea-ce-eap
 bindsym $mod+a exec android-studio
@@ -195,6 +195,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id xbindkeys
 exec --no-startup-id nm-applet
+exec --no-startup-id dunst
 
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5

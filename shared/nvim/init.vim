@@ -8,7 +8,6 @@ Plug 'wellle/targets.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'takac/vim-hardtime'
 
 " Repeat commands
 Plug 'tpope/vim-repeat'
