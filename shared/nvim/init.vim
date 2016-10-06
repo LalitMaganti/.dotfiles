@@ -36,7 +36,11 @@ Plug 'itchyny/lightline.vim'
 " }}}
 
 " More langs
+Plug 'lervag/vimtex'
 Plug 'sheerun/vim-polyglot'
+"{{{
+  let g:polyglot_disabled = ['latex']
+"}}}
 
 " Finish NeoBundle
 call plug#end()
