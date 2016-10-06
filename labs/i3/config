@@ -122,11 +122,11 @@ for_window [class="Spotify"]        move to workspace $ws9
 bindsym $mod+d exec dmenu_run
 bindsym $mod+t exec nautilus --no-desktop
 bindsym $mod+b exec google-chrome-stable
-bindsym $mod+m exec spotify --force-device-scale-factor=1.0000001
+bindsym $mod+m exec fish -c spotify
 bindsym $mod+i exec intellij-idea-ce-eap
 bindsym $mod+a exec android-studio
 
-exec --no-startup-id feh --bg-fill /home/lalit/Pictures/WordsofRadiance_new_1920x1080.jpg
+exec --no-startup-id feh --bg-fill /homes/lrm113/Pictures/WordsofRadiance_new_1920x1080.jpg
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrdb -merge ~/.Xresources
@@ -139,5 +139,3 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 5
