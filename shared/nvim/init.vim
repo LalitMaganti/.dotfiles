@@ -1,4 +1,5 @@
-" Follow the leader
+"
+"Follow the leader
 let g:mapleader=" "
 
 " Plugged
@@ -22,6 +23,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
   set rtp+=~/.fzf
   nnoremap <silent> <leader><space> :Files<CR>
 " }}}
+
+" Appearance
+Plug 'joshdick/onedark.vim'
 
 " Airline
 Plug 'itchyny/lightline.vim'
@@ -73,8 +77,18 @@ autocmd InsertLeave * :call NumberToggle()
 " Clipboard
 set clipboard=unnamedplus
 
+" Color schemes
+if (empty($TMUX))
+  if (has("nvim"))
+    let $nvim_tui_enable_true_color=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+colorscheme onedark
+
 " Yay cursor shape (on NeoVim)
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-" FZF setup
-
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+endif
