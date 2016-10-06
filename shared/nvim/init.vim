@@ -46,12 +46,6 @@ set number
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" Enable hard mode
-let g:hardtime_default_on = 1
-let g:hardtime_timeout = 2000
-let g:hardtime_showmsg = 1
-let g:hardtime_allow_different_key = 1
-
 " Set number toggling and other stuff
 function! NumberToggle()
   set relativenumber!
