@@ -34,9 +34,6 @@ focus_on_window_activation urgent
 
 font pango:Hack, FontAwesome 12
 
-# start a terminal
-bindsym $mod+Return exec gnome-terminal
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -98,7 +95,6 @@ bar {
     position top
     font pango:Hack, FontAwesome 9
     strip_workspace_numbers yes
-    # separator_symbol "■"
     bindsym button4 nop
     bindsym button5 nop
     tray_padding 0
@@ -119,19 +115,15 @@ new_window 1pixel
 assign     [class="(?i)chrome"]                       $ws1
 for_window [class="Spotify"]        move to workspace $ws9
 
+bindsym $mod+Return exec gnome-terminal
 bindsym $mod+d exec dmenu_run
 bindsym $mod+t exec nautilus --no-desktop
 bindsym $mod+b exec google-chrome-stable
 bindsym $mod+m exec fish -c spotify
-bindsym $mod+i exec intellij-idea-ce-eap
-bindsym $mod+a exec android-studio
 
 exec --no-startup-id feh --bg-fill /homes/lrm113/Pictures/WordsofRadiance_new_1920x1080.jpg
 exec --no-startup-id gnome-screensaver
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id xbindkeys
-exec --no-startup-id nm-applet
 
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
