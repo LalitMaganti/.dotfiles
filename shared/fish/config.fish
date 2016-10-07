@@ -10,7 +10,7 @@ fundle init
 
 # Base16 Shell
 if status --is-interactive
-  eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+  eval sh $HOME/.config/base16-shell/scripts/base16-monokai.sh
 end
 
 # Set environment vars
