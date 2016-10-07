@@ -68,12 +68,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $mod+Tab workspace back_and_forth
 
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+Shift+plus scratchpad show
-
-bindsym $mod+Shift+s sticky toggle
 # put YouTube into fullscreen and execute this for media mode
 bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 2140 20
 
@@ -104,8 +99,6 @@ mode --pango_markup "$mode_resize" {
     bindsym Shift+Up resize shrink height 20 px or 5 ppt
     bindsym Shift+Right resize grow width 20 px or 5 ppt
 
-    bindsym s mode "default", exec --no-startup-id $HOME/scripts/slopsize.sh
-
     bindsym 1 mode "default", resize set 1000 600
     bindsym 2 mode "default", resize set 1500 600
     bindsym 3 mode "default", resize set 1200 1000
@@ -114,43 +107,6 @@ mode --pango_markup "$mode_resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "$mode_resize"
-
-set $mode_brightness <span>        </span><span background='#fabd2f' foreground='#000000'> brightness </span> <span foreground='#ebdbb2'>+</span> increase <span foreground='#ebdbb2'>-</span> decrease
-mode --pango_markup "$mode_brightness" {
-    bindsym plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 10
-    bindsym minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 10
-    bindsym Shift+plus  exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -inc 1
-    bindsym Shift+minus exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -dec 1
-
-    bindsym 0     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 100
-    bindsym 1     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 10
-    bindsym 2     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 20
-    bindsym 3     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 30
-    bindsym 4     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 40
-    bindsym 5     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 50
-    bindsym 6     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 60
-    bindsym 7     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 70
-    bindsym 8     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 80
-    bindsym 9     mode "default", exec --no-startup-id ${HOME}/scripts/backlight.sh -time 50 -set 90
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+Shift+b mode "$mode_brightness"
-
-set $mode_power <span>        </span><span background='#fabd2f' foreground='#000000'> power </span> <span foreground='#ebdbb2'>l</span>ock <span foreground='#ebdbb2'>e</span>xit <span foreground='#ebdbb2'>s</span>uspend <span foreground='#ebdbb2'>r</span>eboot <span foreground='#ebdbb2'>p</span>oweroff
-mode --pango_markup "$mode_power" {
-    bindsym l mode "default", exec --no-startup-id $HOME/.i3/i3exit lock
-    bindsym e mode "default", exec --no-startup-id $HOME/.i3/i3exit logout
-    bindsym s mode "default", exec --no-startup-id $HOME/.i3/i3exit suspend
-    bindsym h mode "default", exec --no-startup-id $HOME/.i3/i3exit hibernate
-    bindsym r mode "default", exec --no-startup-id $HOME/.i3/i3exit reboot
-    bindsym p mode "default", exec --no-startup-id $HOME/.i3/i3exit shutdown
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+shift+p mode "$mode_power"
 
 # Bar
 bar {
@@ -193,16 +149,11 @@ exec --no-startup-id feh --bg-fill /home/lalit/Pictures/WordsofRadiance_new_1920
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id xbindkeys
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 5
 bindsym Control+p exec playerctl play-pause
