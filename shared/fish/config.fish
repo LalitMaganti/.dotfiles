@@ -10,7 +10,7 @@ fundle init
 
 # Base16 Shell
 if status --is-interactive
-  eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
+  eval sh $HOME/.config/base16-shell/scripts/base16-monokai.sh
 end
 
 # Set environment vars
@@ -20,15 +20,4 @@ set EDITOR nvim
 # Z hack
 for file in ~/.config/fish/fundle/fisherman/z/conf.d/*.fish
   source $file
-end
-
-# Vim stuff
-# alias trm="trash"
-# alias mrm="maybe rm"
-
-# function rm
-#  echo "NO! Don't use rm. Use trm, mrm or rmi instead."
-# end
-function rmi
-  command rm -i $argv
 end

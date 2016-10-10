@@ -22,7 +22,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 " }}}
 
 " Appearance
-Plug 'joshdick/onedark.vim'
+Plug 'chriskempson/base16-vim'
+
+" Airline
 Plug 'itchyny/lightline.vim'
 " {{{
   let g:lightline = {
@@ -74,7 +76,7 @@ autocmd InsertLeave * :call NumberToggle()
 " Clipboard
 set clipboard=unnamedplus
 
-" Color schemes
+" Colorscheme
 if (empty($TMUX))
   if (has("nvim"))
     let $nvim_tui_enable_true_color=1
@@ -83,7 +85,7 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-colorscheme onedark
+colorscheme base16-monokai
 
 " Yay cursor shape (on NeoVim)
 if (has("nvim"))
