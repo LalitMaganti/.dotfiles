@@ -1,5 +1,4 @@
-"
-"Follow the leader
+" Follow the leader
 let g:mapleader=" "
 
 " Plugged
@@ -12,8 +11,6 @@ Plug 'wellle/targets.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'bronson/vim-trailing-whitespace'
-
-" Repeat commands
 Plug 'tpope/vim-repeat'
 
 " Fzf
@@ -26,8 +23,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 
 " Appearance
 Plug 'joshdick/onedark.vim'
-
-" Airline
 Plug 'itchyny/lightline.vim'
 " {{{
   let g:lightline = {
@@ -40,7 +35,7 @@ Plug 'itchyny/lightline.vim'
 " }}}
 
 " More langs
-Plug 'lervag/vimtex'
+Plug 'vim-latex/vim-latex'
 Plug 'sheerun/vim-polyglot'
 "{{{
   let g:polyglot_disabled = ['latex']
@@ -51,12 +46,14 @@ call plug#end()
 
 " Make Esc faster to type
 imap jk <Esc>
+map fj <Plug>IMAP_JumpForward
 
 " Indentation
 set shiftwidth=2
 set expandtab
 set tabstop=2
 set cindent
+autocmd FileType make setlocal noexpandtab
 
 " Use vim as it was supposed be
 set hidden
