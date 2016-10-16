@@ -80,10 +80,13 @@ set clipboard=unnamedplus
 if (empty($TMUX))
   if (has("nvim"))
     let $nvim_tui_enable_true_color=1
-  endif
-  if (has("termguicolors"))
+  elseif (has("termguicolors"))
     set termguicolors
+  else
+    let base16colorspace=256
   endif
+else
+  let base16colorspace=256
 endif
 colorscheme base16-monokai
 
