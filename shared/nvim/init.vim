@@ -37,6 +37,7 @@ Plug 'itchyny/lightline.vim'
 " }}}
 
 " More langs
+Plug 'markjet7/gmpl.vim'
 Plug 'vim-latex/vim-latex'
 Plug 'sheerun/vim-polyglot'
 "{{{
@@ -88,7 +89,7 @@ if (empty($TMUX))
 else
   let base16colorspace=256
 endif
-colorscheme base16-monokai
+colorscheme base16-onedark
 
 " Yay cursor shape (on NeoVim)
 if (has("nvim"))
