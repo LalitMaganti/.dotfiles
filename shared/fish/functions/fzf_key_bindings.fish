@@ -1,1 +1,0 @@
-/home/lalit/.fzf/shell/key-bindings.fish

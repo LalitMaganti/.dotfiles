@@ -67,7 +67,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+workspace $ws0 output HDMI1
 
 # put YouTube into fullscreen and execute this for media mode
 bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 2140 20
@@ -110,6 +110,7 @@ bindsym $mod+r mode "$mode_resize"
 
 # Bar
 bar {
+    output DP-1
     status_command i3blocks
     i3bar_command i3bar -t
     position top
