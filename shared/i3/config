@@ -1,5 +1,4 @@
 set $mod Mod4
-
 # Some useful colors
 set $black       #212121
 set $darkblack   #000000
@@ -149,9 +148,10 @@ exec --no-startup-id dunst
 
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 5
-bindsym Control+p exec playerctl play-pause
-bindsym Control+plus exec playerctl next
-bindsym Control+minus exec playerctl previous
+
 bindsym Control+Shift+l exec gnome-screensaver-command -l

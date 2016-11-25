@@ -38,7 +38,10 @@ Plug 'itchyny/lightline.vim'
 
 " More langs
 Plug 'markjet7/gmpl.vim'
-Plug 'vim-latex/vim-latex'
+"{{{
+  let g:vimtex_latexmk_progname = "nvr"
+"}}}
+Plug 'lervag/vimtex'
 Plug 'sheerun/vim-polyglot'
 "{{{
   let g:polyglot_disabled = ['latex']

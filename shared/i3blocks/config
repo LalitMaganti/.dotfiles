@@ -6,7 +6,7 @@ separator_block_width=7
 markup=none
 
 [volume]
-label=  
+label= 
 instance=Master
 interval=180
 signal=10
@@ -16,8 +16,13 @@ interval=40
 
 [separator]
 
+[battery]
+interval=40
+
+[separator]
+
 [time]
-label=  
+label= 
 command=echo "`date +'%a %d %b'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
 interval=60
 markup=pango
