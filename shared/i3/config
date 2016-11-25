@@ -67,10 +67,6 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-workspace $ws0 output HDMI1
-
-# put YouTube into fullscreen and execute this for media mode
-bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 2140 20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -110,16 +106,14 @@ bindsym $mod+r mode "$mode_resize"
 
 # Bar
 bar {
-    output DP-1
     status_command i3blocks
     i3bar_command i3bar -t
     position top
-    font pango: San Francisco Text, Font Awesome 11
+    font pango: SFNS Display: style=UltraLight, Font Awesome 10
     strip_workspace_numbers yes
     separator_symbol "■"
     bindsym button4 nop
     bindsym button5 nop
-    tray_padding 0
     height 28
     colors {
         statusline         $white
@@ -149,7 +143,7 @@ bindsym $mod+a exec android-studio
 exec --no-startup-id feh --bg-fill /home/lalit/Pictures/WordsofRadiance_new_1920x1080.jpg
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id xrdb -merge ~/.Xresources ~/.local/rofi/config
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 
