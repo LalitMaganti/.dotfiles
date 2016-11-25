@@ -1,0 +1,23 @@
+command=/usr/lib/i3blocks/$BLOCK_NAME
+
+separator=false
+full_text=|
+separator_block_width=7
+markup=none
+
+[volume]
+label=  
+instance=Master
+interval=180
+signal=10
+
+[mediaplayer]
+interval=40
+
+[separator]
+
+[time]
+label=  
+command=echo "`date +'%a %d %b'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+interval=60
+markup=pango
