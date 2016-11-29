@@ -6,6 +6,7 @@ fundle plugin 'fisherman/z'
 fundle plugin 'oh-my-fish/theme-bobthefish'
 fundle plugin 'oh-my-fish/plugin-tmux'
 fundle plugin 'fisherman/getopts'
+fundle plugin 'fisherman/fzf'
 fundle init
 
 # Base16 Shell

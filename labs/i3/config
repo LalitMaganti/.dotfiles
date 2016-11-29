@@ -127,7 +127,8 @@ exec --no-startup-id xrdb -merge ~/.Xresources
 
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
-bindsym Control+p exec playerctl play-pause
-bindsym Control+plus exec playerctl next
-bindsym Control+minus exec playerctl previous
+bindsym XF86AudioPlay exec fish -c "playerctl play-pause"
+bindsym Control+p exec fish -c "playerctl play-pause"
+bindsym Control+plus exec fish -c "playerctl next"
+bindsym Control+minus exec fish -c "playerctl previous"
 bindsym Control+Shift+l exec gnome-screensaver-command -l
