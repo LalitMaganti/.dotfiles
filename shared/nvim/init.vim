@@ -37,11 +37,25 @@ Plug 'itchyny/lightline.vim'
 " }}}
 
 " More langs
+Plug 'SirVer/ultisnips'
+"{{{
+  " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<tab>"
+  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+  " If you want :UltiSnipsEdit to split your window.
+  let g:UltiSnipsEditSplit="vertical"
+"}}}
+Plug 'honza/vim-snippets'
+"{{{
+  let g:vimtex_view_method = "mupdf"
+"}}}
 Plug 'markjet7/gmpl.vim'
+Plug 'lervag/vimtex'
 "{{{
   let g:vimtex_latexmk_progname = "nvr"
 "}}}
-Plug 'lervag/vimtex'
 Plug 'sheerun/vim-polyglot'
 "{{{
   let g:polyglot_disabled = ['latex']
@@ -76,6 +90,9 @@ set nonumber
 " Do stuff when enter leave etc
 autocmd InsertEnter * :call NumberToggle()
 autocmd InsertLeave * :call NumberToggle()
+
+" Put this in vimrc, add custom commands in the function.
+autocmd BufLeave,FocusLost * silent! wall
 
 " Clipboard
 set clipboard=unnamedplus
