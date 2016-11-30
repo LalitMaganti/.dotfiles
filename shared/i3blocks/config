@@ -5,14 +5,14 @@ full_text=|
 separator_block_width=7
 markup=none
 
+[mediaplayer]
+interval=40
+
 [volume]
 label= 
 instance=Master
 interval=180
 signal=10
-
-[mediaplayer]
-interval=40
 
 [separator]
 
