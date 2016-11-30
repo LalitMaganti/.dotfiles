@@ -52,6 +52,7 @@ Plug 'honza/vim-snippets'
   let g:vimtex_view_method = "mupdf"
 "}}}
 Plug 'markjet7/gmpl.vim'
+Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'lervag/vimtex'
 "{{{
   let g:vimtex_latexmk_progname = "nvr"
