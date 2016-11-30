@@ -3,7 +3,7 @@
 foreground      = #abb2bf
 foreground_bold = #abb2bf
 cursor          = #abb2bf
-background      = #282c34
+background      = rgba(40, 44, 52, 0.85)
 
 # black
 color0  = #282c34

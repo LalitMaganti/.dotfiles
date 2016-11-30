@@ -17,7 +17,7 @@ set_from_resource $white       color15 #000000
 # Use custom colors for black
 set $black       #282828
 set $darkblack   #1d2021
-set $transparent #00000000
+set $transparent #00000092
 
 set $ws1  "1:  "
 set $ws2  "2:  "
@@ -157,15 +157,15 @@ bar {
         separator          $transparent
 
 #                          BORDER       BACKGROUND   TEXT
-        focused_workspace  $transparent $transparent $black
+        focused_workspace  $transparent $transparent $darkred
         inactive_workspace $transparent $transparent $white
-        active_workspace   $black $black $white
+        active_workspace   $black       $black       $white
         urgent_workspace   $darkred     $darkred     $black
         binding_mode       $darkred     $darkred     $black
     }
 }
 
-new_window 1pixel
+new_window none
 assign     [class="(?i)chrome"]                       $ws1
 for_window [class="Spotify"]        move to workspace $ws9
 
@@ -181,8 +181,6 @@ bindsym $mod+a exec android-studio
 exec --no-startup-id feh --bg-fill $HOME/.config/wallpaper/wallpaper.png
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id xrdb -load $HOME/.Xresources
-exec --no-startup-id xrdb -load $HOME/.local/rofi/config
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id compton -b
