@@ -1,14 +1,4 @@
-# Set env vars
-set -x MAKEFLAGS "-j"(nproc)
-export AURDEST=/run/media/lalit/Android/aur-installed/
-
-alias grep="rg"
-
-alias trm="trash"
-alias mrm="maybe rm"
-# function rm
-#   echo "NO! Don't use rm. Use trm, mrm or rmi instead."
-# end
-function rmi
-  command rm -i $argv
-end
+set MAKEFLAGS "-j"(nproc)
+set -gx PATH $PATH ~/.npm-global/bin /usr/bin/vendor_perl/
+set -gx XDG_CONFIG_HOME ~/.config
+alias mpvo="mpv --script-opts=osc-layout=box,osc-seekbarstyle=slider"
