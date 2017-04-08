@@ -34,9 +34,6 @@ focus_on_window_activation urgent
 
 font pango:Hack, FontAwesome 12
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # Focus with vim keybindings
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -49,10 +46,14 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# Deal with splits
 bindsym $mod+o split h
 bindsym $mod+p split v
 
+# Window management
+bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -66,13 +67,6 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace back_and_forth
-
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+Shift+plus scratchpad show
-
-bindsym $mod+Shift+s sticky toggle
-# put YouTube into fullscreen and execute this for media mode
-bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 2140 20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
