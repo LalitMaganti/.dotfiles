@@ -194,3 +194,4 @@ bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 5
 
 bindsym Control+Shift+l exec gnome-screensaver-command -l
+bindsym Control+Shift+s exec systemctl suspend
