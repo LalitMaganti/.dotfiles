@@ -34,9 +34,6 @@ focus_on_window_activation urgent
 
 font pango:Hack, FontAwesome 12
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # Focus with vim keybindings
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -49,10 +46,14 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# Deal with splits
 bindsym $mod+o split h
 bindsym $mod+p split v
 
+# Window management
+bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -67,13 +68,6 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace back_and_forth
 
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+Shift+plus scratchpad show
-
-bindsym $mod+Shift+s sticky toggle
-# put YouTube into fullscreen and execute this for media mode
-bindsym $mod+y fullscreen disable; floating enable; resize set 400 300; sticky enable; move window to position 2140 20
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -85,6 +79,28 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Resize
+set $mode_resize resize
+bindsym $mod+r mode "$mode_resize"
+mode "$mode_resize" {
+    bindsym Left resize shrink width 10 px or 1 ppt
+    bindsym Down resize grow height 10 px or 1 ppt
+    bindsym Up resize shrink height 10 px or 1 ppt
+    bindsym Right resize grow width 10 px or 1 ppt
+
+    bindsym Shift+Left resize shrink width 20 px or 5 ppt
+    bindsym Shift+Down resize grow height 20 px or 5 ppt
+    bindsym Shift+Up resize shrink height 20 px or 5 ppt
+    bindsym Shift+Right resize grow width 20 px or 5 ppt
+
+    bindsym 1 mode "default", resize set 1000 600
+    bindsym 2 mode "default", resize set 1500 600
+    bindsym 3 mode "default", resize set 1200 1000
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
