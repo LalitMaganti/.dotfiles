@@ -173,8 +173,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+c exec communi
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
-bindsym $mod+b exec chromium
-bindsym $mod+m exec spotify --force-device-scale-factor=1.0000001
+bindsym $mod+b exec google-chrome-stable
 bindsym $mod+i exec intellij-idea-ce-eap
 bindsym $mod+a exec android-studio
 
