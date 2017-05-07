@@ -1,18 +1,23 @@
 command=/usr/lib/i3blocks/$BLOCK_NAME
 
-separator=false
 full_text=|
-separator_block_width=7
+separator_block_width=10
 markup=none
 
 [mediaplayer]
 interval=40
+separator=false
 
 [volume]
 label= 
 instance=Master
 interval=180
 signal=10
+
+[separator]
+
+[iface]
+interval=60
 
 [separator]
 
