@@ -171,12 +171,9 @@ assign     [class="(?i)chrome"]                       $ws1
 for_window [class="Spotify"]        move to workspace $ws9
 
 bindsym $mod+Return exec termite
-bindsym $mod+c exec communi
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
 bindsym $mod+b exec google-chrome-stable
-bindsym $mod+i exec intellij-idea-ce-eap
-bindsym $mod+a exec android-studio
 
 exec --no-startup-id feh --bg-fill $HOME/.config/wallpaper/wallpaper.png
 exec --no-startup-id gnome-screensaver
