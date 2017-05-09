@@ -8,3 +8,7 @@ set -q PERL_LOCAL_LIB_ROOT; and set -x PERL_LOCAL_LIB_ROOT $HOME/perl5:$PERL_LOC
 set -q PERL_LOCAL_LIB_ROOT; or set -x PERL_LOCAL_LIB_ROOT $HOME/perl5
 set -x PERL_MB_OPT --install_base\ \"$HOME/perl5\"
 set -x PERL_MM_OPT INSTALL_BASE=$HOME/perl5
+
+if status --is-interactive
+  eval sh $HOME/.local/share/base16-gnome-terminal/base16-default.dark.sh
+end
