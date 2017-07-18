@@ -2,7 +2,7 @@
 let g:mapleader=" "
 
 " Plugged
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Generic plugins
 Plug 'tpope/vim-sensible'
@@ -100,9 +100,7 @@ set clipboard=unnamedplus
 
 " Colorscheme
 if (empty($TMUX))
-  if (has("nvim"))
-    let $nvim_tui_enable_true_color=1
-  elseif (has("termguicolors"))
+  if (has("termguicolors"))
     set termguicolors
   else
     let base16colorspace=256
