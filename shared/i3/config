@@ -173,10 +173,9 @@ for_window [class="Spotify"]        move to workspace $ws9
 bindsym $mod+Return exec termite
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec firefox-beta
 
-exec --no-startup-id feh --bg-fill $HOME/.config/wallpaper/wallpaper.png
-exec --no-startup-id gnome-screensaver
+exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
@@ -190,5 +189,5 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 5
 
-bindsym Control+Shift+l exec gnome-screensaver-command -l
+bindsym Control+Shift+l exec $HOME/.local/bin/lock $HOME/.local/share/desktop/lock.png
 bindsym Control+Shift+s exec systemctl suspend
