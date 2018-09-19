@@ -194,5 +194,5 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 
-bindsym Control+Shift+l exec $HOME/.local/bin/lock $HOME/.local/share/desktop/lock.png
+bindsym Control+Shift+l exec $HOME/.local/scripts/lock $HOME/.local/share/desktop/lock.png
 bindsym Control+Shift+s exec systemctl suspend
