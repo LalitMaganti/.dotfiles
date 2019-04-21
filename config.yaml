@@ -1,0 +1,32 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  ignoreempty: false
+  keepdot: true
+  link_dotfile_default: link
+  link_on_import: nolink
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  fish_env_laptop:
+    dst: ~/.config/fish/env.fish
+    src: fish/env_laptop.fish
+  i3_config_laptop:
+    dst: ~/.config/i3/config
+    src: i3/config_laptop
+  i3blocks_laptop:
+    dst: ~/.config/i3blocks/config
+    src: i3blocks/config_laptop
+  nvim_rc:
+    dst: ~/.config/nvim/init.vim
+    src: nvim/init.vim
+profiles:
+  lalit-xps:
+    dotfiles:
+    - nvim_rc
+    - fish_env_laptop
+    - i3blocks_laptop
+    - i3_config_laptop
