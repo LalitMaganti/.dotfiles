@@ -30,3 +30,7 @@ profiles:
     - fish_env_laptop
     - i3blocks_laptop
     - i3_config_laptop
+  lalit-hp:
+    dotfiles:
+    - nvim_rc
+    - i3_config_laptop
