@@ -1,5 +1,6 @@
 " Plugged
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
+
 "
 " Appearance
 Plug 'chriskempson/base16-vim'

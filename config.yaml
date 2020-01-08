@@ -34,3 +34,6 @@ profiles:
     dotfiles:
     - nvim_rc
     - i3_config_laptop
+  lalit-dedi:
+    dotfiles:
+    - nvim_rc
