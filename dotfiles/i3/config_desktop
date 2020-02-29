@@ -1,0 +1,137 @@
+set $mod Mod4
+
+set $darkred     #db0000
+set $red         #ff0000
+set $off_red	 #cd5c5c
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set $white       #ffffff
+# Use custom colors for black
+set $black       #282828
+set $darkblack   #1d2021
+set $transparent #00000092
+
+set $ws1  "1:  "
+set $ws2  "2:  "
+set $ws3  "3:  "
+set $ws4  "4:  "
+set $ws5  "5:  "
+set $ws6  "6:  "
+set $ws7  "7:  "
+set $ws8  "8:  "
+set $ws9  "9:  "
+set $ws10 "10:  "
+
+font pango:SF Pro Display, FontAwesome 12
+force_display_urgency_hint 0 ms
+focus_on_window_activation urgent
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+o split h
+bindsym $mod+p split v
+
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+r restart
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym --whole-window $mod+Left workspace prev
+bindsym --whole-window $mod+Right workspace next
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+set $mode_resize resize
+bindsym $mod+r mode "$mode_resize"
+mode "$mode_resize" {
+    bindsym Left resize shrink width 10 px or 1 ppt
+    bindsym Down resize grow height 10 px or 1 ppt
+    bindsym Up resize shrink height 10 px or 1 ppt
+    bindsym Right resize grow width 10 px or 1 ppt
+
+    bindsym Shift+Left resize shrink width 20 px or 5 ppt
+    bindsym Shift+Down resize grow height 20 px or 5 ppt
+    bindsym Shift+Up resize shrink height 20 px or 5 ppt
+    bindsym Shift+Right resize grow width 20 px or 5 ppt
+
+    bindsym 1 mode "default", resize set 1000 600
+    bindsym 2 mode "default", resize set 1500 600
+    bindsym 3 mode "default", resize set 1200 1000
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bar {
+    status_command i3blocks
+    i3bar_command i3bar -t
+    position top
+    font pango: Hack, Font Awesome 10
+    strip_workspace_numbers yes
+    separator_symbol "■"
+    bindsym button4 nop
+    bindsym button5 nop
+    tray_output primary
+    height 24
+    colors {
+        statusline         $white
+        background         $black
+        separator          $black
+
+#                          BORDER       BACKGROUND   TEXT
+        focused_workspace  $black       $black       $off_red
+        inactive_workspace $black       $black       $white
+        active_workspace   $black       $black       $white
+        urgent_workspace   $darkred     $darkred     $black
+        binding_mode       $darkred     $darkred     $black
+    }
+}
+
+new_window none
+assign     [class="(?i)chrome"]                       $ws1
+
+bindsym $mod+Return exec termite
+bindsym $mod+d exec rofi -show run
+bindsym $mod+t exec thunar
+bindsym $mod+b exec google-chrome-stable --force-dark-mode
+
+exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
+exec --no-startup-id compton -b
