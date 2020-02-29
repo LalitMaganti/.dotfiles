@@ -1,2 +1,0 @@
-#!/bin/bash
-fusermount -uz /media/gsuite-crypt
