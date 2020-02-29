@@ -41,6 +41,9 @@ dotfiles:
   wallpaper:
     dst: ~/.local/share/desktop/wallpaper.png
     src: wallpaper/wallpaper.png
+  tmux:
+    dst: ~/.tmux.conf
+    src: tmux/tmux.conf
 profiles:
   lalit-xps:
     dotfiles:
@@ -58,6 +61,7 @@ profiles:
     - fish_env_desktop
     - rofi
     - wallpaper
+    - tmux
   lalit-do:
     dotfiles:
     - nvim_rc
