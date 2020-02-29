@@ -14,6 +14,9 @@ dotfiles:
   fish_env_laptop:
     dst: ~/.config/fish/env.fish
     src: fish/env_laptop.fish
+  fish_env_desktop:
+    dst: ~/.config/fish/env.fish
+    src: fish/env_desktop.fish
   i3_config_laptop:
     dst: ~/.config/i3/config
     src: i3/config_laptop
@@ -29,6 +32,9 @@ dotfiles:
   fish:
     dst: ~/.config/fish/config.fish
     src: fish/config.fish
+  termite:
+    dst: ~/.config/termite/config
+    src: termite/config
 profiles:
   lalit-xps:
     dotfiles:
@@ -42,6 +48,8 @@ profiles:
     - i3_config_laptop
     - i3blocks_desktop
     - fish
+    - termite
+    - fish_env_desktop
   lalit-do:
     dotfiles:
     - nvim_rc
