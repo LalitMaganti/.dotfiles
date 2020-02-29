@@ -20,9 +20,15 @@ dotfiles:
   i3blocks_laptop:
     dst: ~/.config/i3blocks/config
     src: i3blocks/config_laptop
+  i3blocks_desktop:
+    dst: ~/.config/i3blocks/config
+    src: i3blocks/config_desktop
   nvim_rc:
     dst: ~/.config/nvim/init.vim
     src: nvim/init.vim
+  fish:
+    dst: ~/.config/fish/config.fish
+    src: fish/config.fish
 profiles:
   lalit-xps:
     dotfiles:
@@ -34,6 +40,8 @@ profiles:
     dotfiles:
     - nvim_rc
     - i3_config_laptop
-  lalit-dedi:
+    - i3blocks_desktop
+    - fish
+  lalit-do:
     dotfiles:
     - nvim_rc
