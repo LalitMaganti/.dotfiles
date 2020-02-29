@@ -35,6 +35,12 @@ dotfiles:
   termite:
     dst: ~/.config/termite/config
     src: termite/config
+  rofi:
+    dst: ~/.config/rofi/config
+    src: rofi/config
+  wallpaper:
+    dst: ~/.local/share/desktop/wallpaper.png
+    src: wallpaper/wallpaper.png
 profiles:
   lalit-xps:
     dotfiles:
@@ -50,6 +56,8 @@ profiles:
     - fish
     - termite
     - fish_env_desktop
+    - rofi
+    - wallpaper
   lalit-do:
     dotfiles:
     - nvim_rc
