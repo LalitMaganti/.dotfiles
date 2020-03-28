@@ -51,9 +51,11 @@ profiles:
   lalit-xps:
     dotfiles:
     - nvim_rc
+    - fish
     - fish_env_laptop
     - i3blocks_laptop
     - i3_laptop
+    - termite
   lalit-hp:
     dotfiles:
     - nvim_rc
