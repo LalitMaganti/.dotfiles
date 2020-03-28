@@ -183,7 +183,7 @@ bindsym $mod+b exec google-chrome-stable
 
 exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id cmst -m
+exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id compton -b
 
