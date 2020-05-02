@@ -1,33 +1,26 @@
-command=/usr/lib/i3blocks/$BLOCK_NAME
-
 full_text=|
 separator_block_width=10
 markup=none
 
-[mediaplayer]
-interval=40
-separator=false
-
-[volume]
+[volume-pulseaudio]
+command=/usr/lib/i3blocks/volume-pulseaudio/volume-pulseaudio
 label= 
-instance=Master
-interval=180
-signal=10
-
-[separator]
-
-[iface]
-interval=60
+interval=once
+signal=1
+USE_ALSA_NAME=0
+USE_DESCRIPTION=0
 
 [separator]
 
 [battery]
+command=/usr/lib/i3blocks/battery2/battery2
 interval=40
+markup=pango
 
 [separator]
 
 [time]
-label= 
-command=echo "`date +'%a %d %b'` <b>`date +'%H:%M'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
-interval=60
+command=echo "`date +'%a %d %b'` <b>`date +'%H:%M:%S'`</b> "
+label=  
+interval=5
 markup=pango

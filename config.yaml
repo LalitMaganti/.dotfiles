@@ -56,6 +56,9 @@ profiles:
     - i3blocks_laptop
     - i3_laptop
     - termite
+    - rofi
+    - wallpaper
+    - tmux
   lalit-hp:
     dotfiles:
     - nvim_rc

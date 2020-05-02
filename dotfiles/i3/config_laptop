@@ -160,12 +160,12 @@ bar {
     height 28
     colors {
         statusline         $white
-        background         $transparent
-        separator          $transparent
+        background         $black
+        separator          $black
 
 #                          BORDER       BACKGROUND   TEXT
-        focused_workspace  $transparent $transparent $off_red
-        inactive_workspace $transparent $transparent $white
+        focused_workspace  $black $black $off_red
+        inactive_workspace $black $black $white
         active_workspace   $black       $black       $white
         urgent_workspace   $darkred     $darkred     $black
         binding_mode       $darkred     $darkred     $black
@@ -174,7 +174,6 @@ bar {
 
 new_window none
 assign     [class="(?i)chrome"]                       $ws1
-for_window [class="Spotify"]        move to workspace $ws9
 
 bindsym $mod+Return exec termite
 bindsym $mod+d exec rofi -show run
@@ -182,13 +181,12 @@ bindsym $mod+t exec thunar
 bindsym $mod+b exec google-chrome-stable
 
 exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id compton -b
 
-bindsym XF86AudioLowerVolume exec pamixer --decrease 5
-bindsym XF86AudioRaiseVolume exec pamixer --increase 5
+bindsym XF86AudioLowerVolume exec pamixer --decrease 5 && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
