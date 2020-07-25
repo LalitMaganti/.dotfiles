@@ -99,3 +99,12 @@ profiles:
     - fish_cargo
     - omf_config
     - omf_loader
+  lalitm-macbook:
+    dotfiles:
+    - nvim_rc
+    - tmux
+    - fish
+    - fish_depot_tools
+    - fish_cargo
+    - omf_config
+    - omf_loader
