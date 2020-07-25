@@ -1,4 +1,6 @@
-source "$HOME/.config/fish/env.fish"
+if test -e "$HOME/.config/fish/env.fish"
+  source "$HOME/.config/fish/env.fish"
+end
 
 # Base16 Shell
 if status --is-interactive

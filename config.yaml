@@ -73,3 +73,13 @@ profiles:
   lalit-do:
     dotfiles:
     - nvim_rc
+  lalit-ryzen:
+    dotfiles:
+    - termite
+    - i3_desktop
+    - i3blocks_desktop
+    - nvim_rc
+    - fish
+    - rofi
+    - wallpaper
+    - tmux
