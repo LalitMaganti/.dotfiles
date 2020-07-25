@@ -40,18 +40,8 @@ augroup END
 set clipboard=unnamedplus
 
 " Colorscheme
-if (empty($TMUX))
-  if (has("termguicolors"))
-    set termguicolors
-  else
-    let base16colorspace=256
-  endif
-else
-  let base16colorspace=256
-endif
+set notermguicolors
 colorscheme base16-onedark
 
-" Yay cursor shape (on NeoVim)
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-endif
+" Cursor shape
+set guicursor=i:ver25-iCursor
