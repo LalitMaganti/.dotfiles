@@ -17,6 +17,9 @@ dotfiles:
   fish_env_desktop:
     dst: ~/.config/fish/env.fish
     src: fish/env_desktop.fish
+  fish_depot_tools:
+    dst: ~/.config/fish/conf.d/10_depot_tools.fish
+    src: fish/10_depot_tools.fish
   i3_laptop:
     dst: ~/.config/i3/config
     src: i3/config_laptop
@@ -83,3 +86,4 @@ profiles:
     - rofi
     - wallpaper
     - tmux
+    - fish_depot_tools
