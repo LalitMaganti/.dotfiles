@@ -44,7 +44,7 @@ dotfiles:
   nvim_rc:
     dst: ~/.config/nvim/init.vim
     src: nvim/init.vim
-  fish:
+  fish_legacy:
     dst: ~/.config/fish/config.fish
     src: fish/config.fish
   termite:
@@ -63,7 +63,7 @@ profiles:
   lalit-xps:
     dotfiles:
     - nvim_rc
-    - fish
+    - fish_legacy
     - fish_env_laptop
     - i3blocks_laptop
     - i3_laptop
@@ -76,7 +76,7 @@ profiles:
     - nvim_rc
     - i3_desktop
     - i3blocks_desktop
-    - fish
+    - fish_legacy
     - termite
     - fish_env_desktop
     - rofi
@@ -91,7 +91,7 @@ profiles:
     - i3_desktop
     - i3blocks_desktop
     - nvim_rc
-    - fish
+    - fish_legacy
     - rofi
     - wallpaper
     - tmux
@@ -103,7 +103,6 @@ profiles:
     dotfiles:
     - nvim_rc
     - tmux
-    - fish
     - fish_depot_tools
     - fish_cargo
     - omf_config
