@@ -14,6 +14,9 @@ dotfiles:
   omf_config:
     dst: ~/.config/omf
     src: omf
+  fish_brew:
+    dst: ~/.config/fish/conf.d/00_brew.fish
+    src: fish/00_brew.fish
   omf_loader:
     dst: ~/.config/fish/conf.d/01_omf.fish
     src: fish/01_omf.fish
@@ -107,3 +110,4 @@ profiles:
     - fish_cargo
     - omf_config
     - omf_loader
+    - fish_brew
