@@ -29,6 +29,9 @@ dotfiles:
   fish_depot_tools:
     dst: ~/.config/fish/conf.d/10_depot_tools.fish
     src: fish/10_depot_tools.fish
+  fish_krew:
+    dst: ~/.config/fish/conf.d/06_krew.fish
+    src: fish/06_krew.fish
   fish_cargo:
     dst: ~/.config/fish/conf.d/05_cargo.fish
     src: fish/05_cargo.fish
@@ -111,3 +114,4 @@ profiles:
     - omf_config
     - omf_loader
     - fish_brew
+    - fish_krew
