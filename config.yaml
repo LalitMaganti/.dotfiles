@@ -20,9 +20,6 @@ dotfiles:
   omf_loader:
     dst: ~/.config/fish/conf.d/01_omf.fish
     src: fish/01_omf.fish
-  fish_env_laptop:
-    dst: ~/.config/fish/env.fish
-    src: fish/env_laptop.fish
   fish_env_desktop:
     dst: ~/.config/fish/env.fish
     src: fish/env_desktop.fish
@@ -35,6 +32,9 @@ dotfiles:
   fish_cargo:
     dst: ~/.config/fish/conf.d/05_cargo.fish
     src: fish/05_cargo.fish
+  fish_base16:
+    dst: ~/.config/fish/conf.d/90_base16.fish
+    src: fish/90_base16.fish
   i3_laptop:
     dst: ~/.config/i3/config
     src: i3/config_laptop
@@ -69,14 +69,16 @@ profiles:
   lalit-xps:
     dotfiles:
     - nvim_rc
-    - fish_legacy
-    - fish_env_laptop
     - i3blocks_laptop
     - i3_laptop
     - termite
     - rofi
     - wallpaper
     - tmux
+    - fish_cargo
+    - omf_config
+    - omf_loader
+    - fish_base16
   lalit-hp:
     dotfiles:
     - nvim_rc
@@ -97,10 +99,10 @@ profiles:
     - i3_desktop
     - i3blocks_desktop
     - nvim_rc
-    - fish_legacy
     - rofi
     - wallpaper
     - tmux
+    - fish_base16
     - fish_depot_tools
     - fish_cargo
     - omf_config
