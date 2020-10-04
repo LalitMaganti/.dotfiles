@@ -35,6 +35,9 @@ dotfiles:
   fish_base16:
     dst: ~/.config/fish/conf.d/90_base16.fish
     src: fish/90_base16.fish
+  fish_ssh_agent:
+    dst: ~/.config/fish/conf.d/80_ssh_agent.fish
+    src: fish/80_ssh_agent.fish
   i3_laptop:
     dst: ~/.config/i3/config
     src: i3/config_laptop
@@ -76,9 +79,11 @@ profiles:
     - wallpaper
     - tmux
     - fish_cargo
+    - fish_depot_tools
+    - fish_base16
+    - fish_ssh_agent
     - omf_config
     - omf_loader
-    - fish_base16
   lalit-hp:
     dotfiles:
     - nvim_rc
