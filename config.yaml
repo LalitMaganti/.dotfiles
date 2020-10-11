@@ -89,6 +89,8 @@ profiles:
     - rofi
     - wallpaper
     - tmux
+    - omf_config
+    - omf_loader
   lalit-do:
     dotfiles:
     - nvim_rc
