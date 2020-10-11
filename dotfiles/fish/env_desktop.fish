@@ -1,1 +1,0 @@
-set PKGEXT '.pkg.tar'

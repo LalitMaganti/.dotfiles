@@ -20,9 +20,6 @@ dotfiles:
   omf_loader:
     dst: ~/.config/fish/conf.d/01_omf.fish
     src: fish/01_omf.fish
-  fish_env_desktop:
-    dst: ~/.config/fish/env.fish
-    src: fish/env_desktop.fish
   fish_depot_tools:
     dst: ~/.config/fish/conf.d/10_depot_tools.fish
     src: fish/10_depot_tools.fish
@@ -53,9 +50,6 @@ dotfiles:
   nvim_rc:
     dst: ~/.config/nvim/init.vim
     src: nvim/init.vim
-  fish_legacy:
-    dst: ~/.config/fish/config.fish
-    src: fish/config.fish
   termite:
     dst: ~/.config/termite/config
     src: termite/config
@@ -89,9 +83,9 @@ profiles:
     - nvim_rc
     - i3_desktop
     - i3blocks_desktop
-    - fish_legacy
     - termite
-    - fish_env_desktop
+    - fish_base16
+    - fish_ssh_agent
     - rofi
     - wallpaper
     - tmux
