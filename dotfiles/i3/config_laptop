@@ -134,6 +134,7 @@ exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id picom -b
+exec --no-startup-id vorta
 
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5 && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3blocks 
