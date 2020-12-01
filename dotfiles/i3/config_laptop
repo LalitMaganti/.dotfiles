@@ -125,7 +125,7 @@ bar {
 new_window none
 assign     [class="(?i)chrome"]                       $ws1
 
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec tilix
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
 bindsym $mod+b exec google-chrome-stable
