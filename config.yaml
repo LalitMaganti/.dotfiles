@@ -20,21 +20,24 @@ dotfiles:
   omf_loader:
     dst: ~/.config/fish/conf.d/01_omf.fish
     src: fish/01_omf.fish
-  fish_depot_tools:
-    dst: ~/.config/fish/conf.d/10_depot_tools.fish
-    src: fish/10_depot_tools.fish
-  fish_krew:
-    dst: ~/.config/fish/conf.d/06_krew.fish
-    src: fish/06_krew.fish
   fish_cargo:
     dst: ~/.config/fish/conf.d/05_cargo.fish
     src: fish/05_cargo.fish
-  fish_base16:
-    dst: ~/.config/fish/conf.d/90_base16.fish
-    src: fish/90_base16.fish
+  fish_krew:
+    dst: ~/.config/fish/conf.d/06_krew.fish
+    src: fish/06_krew.fish
+  fish_depot_tools:
+    dst: ~/.config/fish/conf.d/10_depot_tools.fish
+    src: fish/10_depot_tools.fish
+  fish_local_bin:
+    dst: ~/.config/fish/conf.d/20_local_bin.fish
+    src: fish/20_local_bin.fish
   fish_ssh_agent:
     dst: ~/.config/fish/conf.d/80_ssh_agent.fish
     src: fish/80_ssh_agent.fish
+  fish_base16:
+    dst: ~/.config/fish/conf.d/90_base16.fish
+    src: fish/90_base16.fish
   i3_laptop:
     dst: ~/.config/i3/config
     src: i3/config_laptop
@@ -73,6 +76,7 @@ profiles:
     - wallpaper
     - tmux
     - fish_cargo
+    - fish_local_bin
     - fish_depot_tools
     - fish_ssh_agent
     - omf_config
