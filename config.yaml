@@ -74,7 +74,6 @@ profiles:
     - tmux
     - fish_cargo
     - fish_depot_tools
-    - fish_base16
     - fish_ssh_agent
     - omf_config
     - omf_loader
