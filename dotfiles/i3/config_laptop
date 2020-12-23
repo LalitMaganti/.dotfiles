@@ -101,7 +101,7 @@ bar {
     status_command i3blocks
     i3bar_command i3bar -t
     position top
-    font pango: SFNS Display: style=UltraLight, Font Awesome 10
+    font pango: SF Pro Display: style=UltraLight, Font Awesome 10
     strip_workspace_numbers yes
     separator_symbol "■"
     bindsym button4 nop
@@ -128,7 +128,7 @@ assign     [class="(?i)chrome"]                       $ws1
 bindsym $mod+Return exec tilix
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec google-chrome-stable --force-dark-mode
 
 exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
 exec --no-startup-id nm-applet

@@ -63,7 +63,7 @@ dotfiles:
     dst: ~/.tmux.conf
     src: tmux/tmux.conf
 profiles:
-  lalit-xps:
+  xps-9360-arch:
     dotfiles:
     - nvim_rc
     - i3blocks_laptop
