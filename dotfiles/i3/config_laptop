@@ -127,14 +127,14 @@ assign     [class="(?i)chrome"]                       $ws1
 
 bindsym $mod+Return exec tilix
 bindsym $mod+d exec rofi -show run
-bindsym $mod+t exec thunar
+bindsym $mod+t exec nautilus
 bindsym $mod+b exec google-chrome-stable --force-dark-mode
 
 exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
-exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id picom -b
 exec --no-startup-id vorta
+exec --no-startup-id xss-lock -- i3lock -i ~/.local/share/desktop/lock-background.raw --raw 1920x1080:rgb
 
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5 && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3blocks 
@@ -144,7 +144,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 
-bindsym Control+Shift+l exec $HOME/.local/scripts/lock $HOME/.local/share/desktop/lock.png
 bindsym Control+Shift+s exec systemctl suspend
 
 bindsym --whole-window $mod+Left workspace prev
