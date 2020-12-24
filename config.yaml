@@ -89,6 +89,7 @@ profiles:
     - tmux
     - fish_depot_tools
     - fish_cargo
+    - fish_ssh_agent
     - omf_config
     - omf_loader
   lalitm-macbook:
