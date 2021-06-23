@@ -62,6 +62,12 @@ dotfiles:
   tmux:
     dst: ~/.tmux.conf
     src: tmux/tmux.conf
+  alacritty:
+    dst: ~/.config/alacritty/alacritty.yml
+    src: alacritty/alacritty.yml
+  sway:
+    dst: ~/.config/sway/config
+    src: sway/config
 profiles:
   xps-9360-arch:
     dotfiles:
@@ -78,6 +84,8 @@ profiles:
     - fish_ssh_agent
     - omf_config
     - omf_loader
+    - alacritty
+    - sway
   ryzen:
     dotfiles:
     - termite

@@ -3,7 +3,7 @@ separator_block_width=10
 markup=none
 
 [volume-pulseaudio]
-command=/usr/lib/i3blocks/volume-pulseaudio/volume-pulseaudio
+command=/usr/lib/i3blocks/volume/volume
 label= 
 interval=once
 signal=1

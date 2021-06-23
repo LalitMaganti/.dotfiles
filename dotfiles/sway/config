@@ -1,23 +1,10 @@
 set $mod Mod4
 
 set $darkred     #db0000
-set $red         #ff0000
 set $off_red	 #cd5c5c
-set_from_resource $darkgreen   color2  #000000
-set_from_resource $green       color10 #000000
-set_from_resource $darkyellow  color3  #000000
-set_from_resource $yellow      color11 #000000
-set_from_resource $darkblue    color4  #000000
-set_from_resource $blue        color12 #000000
-set_from_resource $darkmagenta color5  #000000
-set_from_resource $magenta     color13 #000000
-set_from_resource $darkcyan    color6  #000000
-set_from_resource $cyan        color14 #000000
-set_from_resource $darkwhite   color7  #000000
 set $white       #ffffff
 # Use custom colors for black
 set $black       #282828
-set $darkblack   #1d2021
 set $transparent #00000092
 
 set $ws1  "1:  "
@@ -32,8 +19,33 @@ set $ws9  "9:  "
 set $ws10 "10:  "
 
 font pango:Hack, FontAwesome 12
+default_border none
 force_display_urgency_hint 0 ms
 focus_on_window_activation urgent
+
+bar {
+    status_command i3blocks
+    position top
+    font pango: SF Pro Display: style=UltraLight, Font Awesome 10
+    strip_workspace_numbers yes
+    separator_symbol "■"
+    bindsym button4 nop
+    bindsym button5 nop
+    tray_output primary
+    height 28
+    colors {
+        statusline         $white
+        background         $black
+        separator          $black
+
+#                          BORDER       BACKGROUND   TEXT
+        focused_workspace  $black       $black       $off_red
+        inactive_workspace $black       $black       $white
+        active_workspace   $black       $black       $white
+        urgent_workspace   $darkred     $darkred     $black
+        binding_mode       $darkred     $darkred     $black
+    }
+}
 
 bindsym $mod+Shift+q kill
 
@@ -51,7 +63,7 @@ bindsym $mod+o split h
 bindsym $mod+p split v
 
 bindsym $mod+f fullscreen
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec swaymsg reload
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -97,54 +109,27 @@ mode "$mode_resize" {
     bindsym Escape mode "default"
 }
 
-bar {
-    status_command i3blocks
-    i3bar_command i3bar -t
-    position top
-    font pango: SF Pro Display: style=UltraLight, Font Awesome 10
-    strip_workspace_numbers yes
-    separator_symbol "■"
-    bindsym button4 nop
-    bindsym button5 nop
-    tray_output primary
-    height 28
-    colors {
-        statusline         $white
-        background         $black
-        separator          $black
+exec --no-startup-id vorta -d
 
-#                          BORDER       BACKGROUND   TEXT
-        focused_workspace  $black $black $off_red
-        inactive_workspace $black $black $white
-        active_workspace   $black       $black       $white
-        urgent_workspace   $darkred     $darkred     $black
-        binding_mode       $darkred     $darkred     $black
-    }
-}
-
-new_window none
-assign     [class="(?i)chrome"]                       $ws1
-
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec alacritty
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec nautilus
 bindsym $mod+b exec google-chrome-stable --force-dark-mode
+bindsym Control+Shift+s exec systemctl suspend
 
-exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
-exec --no-startup-id dunst
-exec --no-startup-id picom -b
-exec --no-startup-id vorta -d
-exec --no-startup-id xss-lock -- i3lock -i ~/.local/share/desktop/lock-background.raw --raw 1920x1080:rgb
-
-bindsym XF86AudioLowerVolume exec pamixer --decrease 5 && pkill -RTMIN+1 i3blocks 
-bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioLowerVolume exec pamixer --decrease 5 && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 
-bindsym Control+Shift+s exec systemctl suspend
+input 1739:30383:DLL075B:01_06CB:76AF_Touchpad {
+  natural_scroll enabled
+  tap enabled
+}
 
-bindsym --whole-window $mod+Left workspace prev
-bindsym --whole-window $mod+Right workspace next
+output "*" bg $HOME/.local/share/desktop/wallpaper.png fill
+
+input type:keyboard {
+    xkb_layout gb
+}
