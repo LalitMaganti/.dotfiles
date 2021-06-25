@@ -109,13 +109,14 @@ mode "$mode_resize" {
     bindsym Escape mode "default"
 }
 
-exec --no-startup-id vorta -d
+exec xss-lock -- swaylock -i $HOME/.local/share/desktop/wallpaper.png
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec nautilus
 bindsym $mod+b exec google-chrome-stable --force-dark-mode
 bindsym Control+Shift+s exec systemctl suspend
+bindsym Control+Shift+l exec swaylock -i $HOME/.local/share/desktop/wallpaper.png
 
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5 && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3blocks

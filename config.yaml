@@ -35,9 +35,6 @@ dotfiles:
   fish_ssh_agent:
     dst: ~/.config/fish/conf.d/80_ssh_agent.fish
     src: fish/80_ssh_agent.fish
-  i3_laptop:
-    dst: ~/.config/i3/config
-    src: i3/config_laptop
   i3_desktop:
     dst: ~/.config/i3/config
     src: i3/config_desktop
@@ -73,7 +70,6 @@ profiles:
     dotfiles:
     - nvim_rc
     - i3blocks_laptop
-    - i3_laptop
     - termite
     - rofi
     - wallpaper
