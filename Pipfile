@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 docopt = "*"
 "ruamel.yaml" = "*"
-jinja2 = "*"
+jinja2 = ">=2.11.3"
 python-magic = "*"
 
 [requires]
