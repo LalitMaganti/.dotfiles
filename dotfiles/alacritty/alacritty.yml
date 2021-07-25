@@ -36,4 +36,7 @@ colors:
     cyan:    '0xbe5046'
     white:   '0xc8ccd4'
 
+env:
+  TERM: 'xterm-256color'
+
 draw_bold_text_with_bright_colors: false
