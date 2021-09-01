@@ -51,8 +51,8 @@ dotfiles:
     dst: ~/.config/termite/config
     src: termite/config
   rofi:
-    dst: ~/.config/rofi/config
-    src: rofi/config
+    dst: ~/.config/rofi/config.rasi
+    src: rofi/config.rasi
   wallpaper:
     dst: ~/.local/share/desktop/wallpaper.png
     src: wallpaper/wallpaper.png
@@ -82,7 +82,7 @@ profiles:
     - omf_loader
     - alacritty
     - sway
-  ryzen:
+  arch-desktop:
     dotfiles:
     - termite
     - i3_desktop
@@ -96,6 +96,8 @@ profiles:
     - fish_ssh_agent
     - omf_config
     - omf_loader
+    - alacritty
+    - sway
   lalitm-macbook:
     dotfiles:
     - nvim_rc

@@ -1,0 +1,7 @@
+configuration {
+	modi: "run";
+	font: "Hack 15";
+	location: 2;
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
