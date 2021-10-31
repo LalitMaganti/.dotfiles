@@ -128,12 +128,11 @@ bar {
 }
 
 new_window none
-assign     [class="(?i)chrome"]                       $ws1
 
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec alacritty
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
 bindsym $mod+b exec google-chrome-stable --force-dark-mode
 
 exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
-exec --no-startup-id compton -b
+exec --no-startup-id picom -b --no-vsync -i 1

@@ -35,6 +35,9 @@ dotfiles:
   fish_ssh_agent:
     dst: ~/.config/fish/conf.d/80_ssh_agent.fish
     src: fish/80_ssh_agent.fish
+  fish_sway_java:
+    dst: ~/.config/fish/conf.d/95_sway_java.fish
+    src: fish/95_sway_java.fish
   i3_desktop:
     dst: ~/.config/i3/config
     src: i3/config_desktop
@@ -98,6 +101,7 @@ profiles:
     - omf_loader
     - alacritty
     - sway
+    - fish_sway_java
   lalitm-macbook:
     dotfiles:
     - nvim_rc
