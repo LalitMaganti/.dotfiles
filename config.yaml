@@ -32,6 +32,9 @@ dotfiles:
   fish_local_bin:
     dst: ~/.config/fish/conf.d/20_local_bin.fish
     src: fish/20_local_bin.fish
+  fish_pdm:
+    dst: ~/.config/fish/conf.d/40_pdm.fish
+    src: fish/40_pdm.fish
   fish_ssh_agent:
     dst: ~/.config/fish/conf.d/80_ssh_agent.fish
     src: fish/80_ssh_agent.fish
@@ -81,6 +84,7 @@ profiles:
     - fish_local_bin
     - fish_depot_tools
     - fish_ssh_agent
+    - fish_pdm
     - omf_config
     - omf_loader
     - alacritty
@@ -96,7 +100,9 @@ profiles:
     - tmux
     - fish_depot_tools
     - fish_cargo
+    - fish_local_bin
     - fish_ssh_agent
+    - fish_pdm
     - omf_config
     - omf_loader
     - alacritty
