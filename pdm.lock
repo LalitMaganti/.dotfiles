@@ -91,7 +91,7 @@ summary = "HTTP library with thread-safe connection pooling, file post, and more
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:2d67b0d003af2540a0483029e89895c7858edebc6f4bd5f55a60ee029d9caf3e"
+content_hash = "sha256:557987a17b2f6d786f16f578f4e75c1f63c5ab8388f46082152f305e9f0caf55"
 
 [metadata.files]
 "certifi 2021.10.8" = [
