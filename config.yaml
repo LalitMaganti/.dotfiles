@@ -17,6 +17,9 @@ dotfiles:
   fish_brew:
     dst: ~/.config/fish/conf.d/00_brew.fish
     src: fish/00_brew.fish
+  fish_greeting:
+    dst: ~/.config/fish/conf.d/00_greeting.fish
+    src: fish/00_greeting.fish
   omf_loader:
     dst: ~/.config/fish/conf.d/01_omf.fish
     src: fish/01_omf.fish
@@ -38,6 +41,9 @@ dotfiles:
   fish_ssh_agent:
     dst: ~/.config/fish/conf.d/80_ssh_agent.fish
     src: fish/80_ssh_agent.fish
+  fish_starship:
+    dst: ~/.config/fish/conf.d/99_starship.fish
+    src: fish/99_starship.fish
   fish_sway_java:
     dst: ~/.config/fish/conf.d/95_sway_java.fish
     src: fish/95_sway_java.fish
@@ -82,9 +88,11 @@ profiles:
     - tmux
     - fish_cargo
     - fish_local_bin
+    - fish_greeting
     - fish_depot_tools
     - fish_ssh_agent
     - fish_pdm
+    - fish_starship
     - omf_config
     - omf_loader
     - alacritty
