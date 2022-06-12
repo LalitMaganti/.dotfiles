@@ -108,9 +108,11 @@ profiles:
     - tmux
     - fish_depot_tools
     - fish_cargo
+    - fish_greeting
     - fish_local_bin
     - fish_ssh_agent
     - fish_pdm
+    - fish_starship
     - omf_config
     - omf_loader
     - alacritty
