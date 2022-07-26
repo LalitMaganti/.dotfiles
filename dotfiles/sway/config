@@ -23,6 +23,11 @@ default_border none
 force_display_urgency_hint 0 ms
 focus_on_window_activation urgent
 
+mode "passthrough" {
+bindsym F12 mode "default"
+}
+bindsym $mod+F12 mode "passthrough"
+
 bar {
     status_command i3blocks
     position top
