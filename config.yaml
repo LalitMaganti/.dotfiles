@@ -78,6 +78,10 @@ dotfiles:
     dst: ~/.config/sway/config
     src: sway/config
 profiles:
+  backup:
+    dotfiles:
+    - fish_local_bin
+    - fish_greeting
   xps-9360-arch:
     dotfiles:
     - nvim_rc
