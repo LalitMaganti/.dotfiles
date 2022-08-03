@@ -78,6 +78,12 @@ dotfiles:
     dst: ~/.config/sway/config
     src: sway/config
 profiles:
+  core:
+    dotfiles:
+    - fish_cargo
+    - fish_greeting
+    - fish_local_bin
+    - fish_starship
   backup:
     dotfiles:
     - fish_cargo
