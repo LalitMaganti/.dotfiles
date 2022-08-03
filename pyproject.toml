@@ -17,9 +17,6 @@ dependencies = [
 requires-python = ">=3.9"
 license = {text = "MIT"}
 
-[project.urls]
-homepage = ""
-
 [tool]
 [tool.pdm]
 [[tool.pdm.source]]
@@ -30,5 +27,5 @@ verify_ssl = true
 dev = []
 
 [build-system]
-requires = ["pdm-pep517"]
+requires = ["pdm-pep517>=1.0.0"]
 build-backend = "pdm.pep517.api"
