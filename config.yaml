@@ -80,59 +80,63 @@ dotfiles:
 profiles:
   backup:
     dotfiles:
-    - fish_local_bin
+    - fish_cargo
     - fish_greeting
+    - fish_local_bin
+    - fish_starship
   nas:
     dotfiles:
-    - fish_local_bin
+    - fish_cargo
     - fish_greeting
+    - fish_local_bin
+    - fish_starship
   xps-9360-arch:
     dotfiles:
-    - nvim_rc
-    - i3blocks_laptop
-    - termite
-    - rofi
-    - wallpaper
-    - tmux
+    - alacritty
     - fish_cargo
-    - fish_local_bin
-    - fish_greeting
     - fish_depot_tools
-    - fish_ssh_agent
+    - fish_greeting
+    - fish_local_bin
     - fish_pdm
+    - fish_ssh_agent
     - fish_starship
+    - i3blocks_laptop
+    - nvim_rc
     - omf_config
     - omf_loader
-    - alacritty
+    - rofi
     - sway
+    - termite
+    - tmux
+    - wallpaper
   arch-desktop:
     dotfiles:
-    - termite
+    - alacritty
+    - fish_cargo
+    - fish_depot_tools
+    - fish_greeting
+    - fish_local_bin
+    - fish_pdm
+    - fish_ssh_agent
+    - fish_starship
+    - fish_sway_java
     - i3_desktop
     - i3blocks_desktop
     - nvim_rc
-    - rofi
-    - wallpaper
-    - tmux
-    - fish_depot_tools
-    - fish_cargo
-    - fish_greeting
-    - fish_local_bin
-    - fish_ssh_agent
-    - fish_pdm
-    - fish_starship
     - omf_config
     - omf_loader
-    - alacritty
+    - rofi
     - sway
-    - fish_sway_java
+    - termite
+    - tmux
+    - wallpaper
   lalitm-macbook:
     dotfiles:
-    - nvim_rc
-    - tmux
-    - fish_depot_tools
+    - fish_brew
     - fish_cargo
+    - fish_depot_tools
+    - fish_krew
+    - nvim_rc
     - omf_config
     - omf_loader
-    - fish_brew
-    - fish_krew
+    - tmux
