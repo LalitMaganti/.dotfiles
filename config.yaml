@@ -90,6 +90,12 @@ profiles:
     - fish_greeting
     - fish_local_bin
     - fish_starship
+  arch-k39:
+    dotfiles:
+    - fish_cargo
+    - fish_greeting
+    - fish_local_bin
+    - fish_starship
   xps-9360-arch:
     dotfiles:
     - alacritty
