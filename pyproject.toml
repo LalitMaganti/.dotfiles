@@ -13,6 +13,7 @@ dependencies = [
     "requests>=2.28.1",
     "packaging>=21.3",
     "toml>=0.10.2",
+    "distro>=1.7.0",
 ]
 requires-python = ">=3.9"
 license = {text = "MIT"}
