@@ -134,5 +134,7 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec thunar
 bindsym $mod+b exec google-chrome-stable --force-dark-mode
 
+for_window [class="^.*"] border pixel 0
+
 exec --no-startup-id feh --bg-fill $HOME/.local/share/desktop/wallpaper.png
 exec --no-startup-id picom -b --no-vsync -i 1
