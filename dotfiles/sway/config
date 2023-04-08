@@ -3,7 +3,6 @@ set $mod Mod4
 set $darkred     #db0000
 set $off_red	 #cd5c5c
 set $white       #ffffff
-# Use custom colors for black
 set $black       #282828
 set $transparent #00000092
 
@@ -18,39 +17,49 @@ set $ws8  "8:  "
 set $ws9  "9:  "
 set $ws10 "10:  "
 
+bar {
+  status_command i3blocks
+  height 28
+  position top
+  font pango: SF Pro Display: style=UltraLight, Font Awesome 10
+  strip_workspace_numbers yes
+  separator_symbol "■"
+  bindsym button4 nop
+  bindsym button5 nop
+  tray_output primary
+  colors {
+    statusline         $white
+    background         $black
+    separator          $black
+
+    focused_workspace  $black       $black       $off_red
+    inactive_workspace $black       $black       $white
+    active_workspace   $black       $black       $white
+    urgent_workspace   $darkred     $darkred     $black
+    binding_mode       $darkred     $darkred     $black
+  }
+}
+
 font pango:Hack, FontAwesome 12
 default_border none
 force_display_urgency_hint 0 ms
 focus_on_window_activation urgent
 
+input type:touchpad {
+  natural_scroll enabled
+  tap enabled
+}
+
+input type:keyboard {
+    xkb_layout gb
+}
+
+output "*" bg $HOME/.local/share/desktop/wallpaper.jpg fill
+
 mode "passthrough" {
-bindsym F12 mode "default"
+  bindsym F12 mode "default"
 }
 bindsym $mod+F12 mode "passthrough"
-
-bar {
-    status_command i3blocks
-    position top
-    font pango: SF Pro Display: style=UltraLight, Font Awesome 10
-    strip_workspace_numbers yes
-    separator_symbol "■"
-    bindsym button4 nop
-    bindsym button5 nop
-    tray_output primary
-    height 28
-    colors {
-        statusline         $white
-        background         $black
-        separator          $black
-
-#                          BORDER       BACKGROUND   TEXT
-        focused_workspace  $black       $black       $off_red
-        inactive_workspace $black       $black       $white
-        active_workspace   $black       $black       $white
-        urgent_workspace   $darkred     $darkred     $black
-        binding_mode       $darkred     $darkred     $black
-    }
-}
 
 bindsym $mod+Shift+q kill
 
@@ -114,28 +123,17 @@ mode "$mode_resize" {
     bindsym Escape mode "default"
 }
 
-exec xss-lock -- swaylock -i $HOME/.local/share/desktop/wallpaper.png
+exec xss-lock -- swaylock -i $HOME/.local/share/desktop/wallpaper.jpg
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+d exec rofi -show run
 bindsym $mod+t exec nautilus
 bindsym $mod+b exec google-chrome-stable --force-dark-mode
-bindsym Control+Shift+s exec systemctl suspend
-bindsym Control+Shift+l exec swaylock -i $HOME/.local/share/desktop/wallpaper.png
+bindsym Alt+Shift+s exec systemctl suspend
+bindsym Alt+Shift+l exec swaylock -i $HOME/.local/share/desktop/wallpaper.jpg
 
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5 && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-input 1739:30383:DLL075B:01_06CB:76AF_Touchpad {
-  natural_scroll enabled
-  tap enabled
-}
-
-output "*" bg $HOME/.local/share/desktop/wallpaper.png fill
-
-input type:keyboard {
-    xkb_layout gb
-}
+bindsym XF86AudioMute exec pamixer -t && pkill -RTMIN+1 i3blocks
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-

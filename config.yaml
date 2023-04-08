@@ -59,15 +59,12 @@ dotfiles:
   nvim_rc:
     dst: ~/.config/nvim/init.vim
     src: nvim/init.vim
-  termite:
-    dst: ~/.config/termite/config
-    src: termite/config
   rofi:
     dst: ~/.config/rofi/config.rasi
     src: rofi/config.rasi
   wallpaper:
-    dst: ~/.local/share/desktop/wallpaper.png
-    src: wallpaper/wallpaper.png
+    dst: ~/.local/share/desktop/wallpaper.jpg
+    src: wallpaper/wallpaper.jpg
   tmux:
     dst: ~/.tmux.conf
     src: tmux/tmux.conf
@@ -102,7 +99,7 @@ profiles:
     - fish_greeting
     - fish_local_bin
     - fish_starship
-  xps-9360-arch:
+  arch-g14:
     dotfiles:
     - alacritty
     - fish_cargo
@@ -118,7 +115,6 @@ profiles:
     - omf_loader
     - rofi
     - sway
-    - termite
     - tmux
     - wallpaper
   arch-desktop:
@@ -139,7 +135,6 @@ profiles:
     - omf_loader
     - rofi
     - sway
-    - termite
     - tmux
     - wallpaper
   lalitm-macbook:
