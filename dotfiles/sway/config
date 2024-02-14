@@ -50,10 +50,6 @@ input type:touchpad {
   tap enabled
 }
 
-input type:keyboard {
-    xkb_layout gb
-}
-
 output "*" bg $HOME/.local/share/desktop/wallpaper.jpg fill
 
 mode "passthrough" {
