@@ -1,3 +1,5 @@
+include /etc/sway/config.d/*
+
 set $mod Mod4
 
 set $darkred     #db0000
