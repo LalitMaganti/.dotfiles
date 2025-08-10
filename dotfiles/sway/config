@@ -59,6 +59,8 @@ mode "passthrough" {
 }
 bindsym $mod+F12 mode "passthrough"
 
+bindsym $mod+Space floating toggle
+
 bindsym $mod+Shift+q kill
 
 bindsym $mod+h focus left
@@ -135,3 +137,12 @@ bindsym XF86AudioRaiseVolume exec pamixer --increase 5 && pkill -RTMIN+1 i3block
 bindsym XF86AudioMute exec pamixer -t && pkill -RTMIN+1 i3blocks
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+output HEADLESS-1 {
+  pos 3000,0
+  mode 1280x800@90Hz
+}
+output HDMI-A-1 {
+  pos 0,0
+  mode 1280x800
+}
