@@ -35,6 +35,9 @@ dotfiles:
   fish_local_bin:
     dst: ~/.config/fish/conf.d/20_local_bin.fish
     src: fish/20_local_bin.fish
+  fish_mise:
+    dst: ~/.config/fish/conf.d/21_mise.fish
+    src: fish/21_mise.fish
   fish_pdm:
     dst: ~/.config/fish/conf.d/40_pdm.fish
     src: fish/40_pdm.fish
@@ -87,15 +90,10 @@ profiles:
     - fish_greeting
     - fish_local_bin
     - fish_starship
-  nas:
-    dotfiles:
-    - fish_cargo
-    - fish_greeting
-    - fish_local_bin
-    - fish_starship
   arch-g14:
     dotfiles:
     - alacritty
+    - fish_mise
     - fish_cargo
     - fish_depot_tools
     - fish_greeting
@@ -111,32 +109,13 @@ profiles:
     - sway
     - tmux
     - wallpaper
-  arch-desktop:
-    dotfiles:
-    - alacritty
-    - fish_cargo
-    - fish_depot_tools
-    - fish_greeting
-    - fish_local_bin
-    - fish_pdm
-    - fish_ssh_agent
-    - fish_starship
-    - fish_sway_java
-    - i3_desktop
-    - i3blocks_desktop
-    - nvim_rc
-    - omf_config
-    - omf_loader
-    - rofi
-    - sway
-    - tmux
-    - wallpaper
   lalitm-macbook:
     dotfiles:
     - fish_brew
     - fish_cargo
     - fish_depot_tools
     - fish_krew
+    - fish_mise
     - nvim_rc
     - omf_config
     - omf_loader

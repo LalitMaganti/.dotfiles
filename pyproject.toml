@@ -11,11 +11,12 @@ dependencies = [
     "docopt<1.0.0,>=0.6.2",
     "distro<2.0.0,>=1.9.0",
     "ruamel-yaml<1.0.0,>=0.18.5",
-    "tomli-w<2.0.0,>=1.0.0",
+    "tomli-w>=1.0.0,<2.0.0",
     "requests<3.0.0,>=2.32.3",
     "packaging<25.0,>=24.1",
     "jinja2<4.0.0,>=3.1.4",
     "python-magic<1.0.0,>=0.4.27",
+    "tomli>=2.2.1",
 ]
 readme = "README.md"
 
