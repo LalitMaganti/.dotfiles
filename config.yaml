@@ -120,3 +120,9 @@ profiles:
     - omf_config
     - omf_loader
     - tmux
+  lalitm-mac-personal:
+    dotfiles:
+    - fish_mise
+    - fish_starship
+    - fish_local_bin
+    - fish_cargo
